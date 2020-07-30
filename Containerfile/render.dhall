@@ -19,9 +19,7 @@ let render =
                   , Run = ./renderRun.dhall
                   , Entrypoint =
                       \(entrypoint : List Text) ->
-                            ''
-
-                            ENTRYPOINT [''
+                            "ENTRYPOINT ["
                         ++  Prelude.Text.concatSep
                               ", "
                               (Prelude.List.map Text Text Text/show entrypoint)
