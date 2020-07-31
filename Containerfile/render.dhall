@@ -5,8 +5,9 @@ let Containerfile = { Type = ./Type.dhall }
 
 let Statement = { Type = ./Statement.dhall }
 
-let render =
-      \(statements : Containerfile.Type) ->
+let render
+    : Containerfile.Type -> Text
+    = \(statements : Containerfile.Type) ->
         let renderStatement =
               \(statement : Statement.Type) ->
                 merge

@@ -2,6 +2,8 @@
 
 Manage your Containerfile with [Dhall][dhall-lang].
 
+Main [documentation](https://docs.softwarefactory-project.io/dhall-containerfile/)
+
 ## Example
 
 ```dhall
