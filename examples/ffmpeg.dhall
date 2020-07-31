@@ -39,11 +39,11 @@ let make
                 , "zlib-devel"
                 , "numactl-devel"
                 ]
-              # (if options.xcb then [ "libxcb-devel" ] else [] : List Text)
+              # Containerfile.optionalTexts options.xcb [ "libxcb-devel" ]
 
         let runtime-reqs =
                 [ "numactl" ]
-              # (if options.xcb then [ "libxcb" ] else [] : List Text)
+              # Containerfile.optionalTexts options.xcb [ "libxcb" ]
 
         let x264-build =
               Containerfile.optionalStatements
