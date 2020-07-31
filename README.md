@@ -109,18 +109,13 @@ let make
                 , "dnf erase -y " ++ Containerfile.concatSep " " build-reqs
                 ]
 
-        let from = [ Containerfile.Statement.From "fedora:latest" ]
-
-        let entrypoint =
-              [ Containerfile.Statement.Entrypoint [ "/usr/local/bin/ffmpeg" ] ]
-
-        in    from
+        in    Containerfile.from "fedora:latest"
             # bootstrap
             # yasm-build
             # x264-build
             # ffmpeg-build
             # cleanup
-            # entrypoint
+            # Containerfile.entrypoint [ "/usr/local/bin/ffmpeg" ]
 
 in  { Containerfile = Containerfile.render (make FfmpegOption.default)
     , make

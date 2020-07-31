@@ -15,6 +15,10 @@ See the README.md for example and usage
     ./Containerfile/optionalTexts.dhall sha256:c136801810a1f3b22dc387bbf61970a952645d9cf16723335ce1c2d615eb6235
 , concatSep =
     ./Containerfile/concatSep.dhall sha256:e4401d69918c61b92a4c0288f7d60a6560ca99726138ed8ebc58dca2cd205e58
+, entrypoint =
+    ./Containerfile/entrypoint.dhall sha256:cf27916ba11563f4e046138a23d4654130f3a89c361f779baa448fa4fbe3b9a4
+, from =
+    ./Containerfile/from.dhall sha256:15d13ad8c90228bacd4018ef4e250a22535ecea108852bcdeb122c70a69fb4db
 , run =
     ./Containerfile/run.dhall sha256:6653469fdd6b8f17cb8255f2f9a556af657d6c7f6657c234609a788ff39c496a
 }
