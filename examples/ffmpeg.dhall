@@ -46,12 +46,13 @@ let make
               # (if options.xcb then [ "libxcb" ] else [] : List Text)
 
         let x264-build =
-              if    options.x264
-              then  buildLib
-                      "x264"
-                      "https://code.videolan.org/videolan/x264.git"
-                      [ "./configure --prefix=\"/usr/local\" --enable-static" ]
-              else  Containerfile.empty
+              Containerfile.optionalStatements
+                options.x264
+                ( buildLib
+                    "x264"
+                    "https://code.videolan.org/videolan/x264.git"
+                    [ "./configure --prefix=\"/usr/local\" --enable-static" ]
+                )
 
         let yasm-build =
               buildLib
@@ -74,14 +75,12 @@ let make
                         , "--enable-gpl"
                         , "--enable-nonfree"
                         ]
-                      # ( if    options.x264
-                          then  [ "--enable-libx264" ]
-                          else  [] : List Text
-                        )
-                      # ( if    options.xcb
-                          then  [ "--enable-libxcb" ]
-                          else  [] : List Text
-                        )
+                      # Containerfile.optionalTexts
+                          options.x264
+                          [ "--enable-libx264" ]
+                      # Containerfile.optionalTexts
+                          options.xcb
+                          [ "--enable-libxcb" ]
                     )
                 ]
 
