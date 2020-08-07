@@ -5,6 +5,6 @@ let from
     : Text -> List Statement
     = \(from : Text) -> [ Statement.From from ]
 
-let example0 = from "fedora" === [ Statement.From "fedora" ]
+let example0 = assert : from "fedora" === [ Statement.From "fedora" ]
 
 in  from

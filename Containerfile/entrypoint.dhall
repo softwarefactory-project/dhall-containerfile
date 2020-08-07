@@ -6,6 +6,7 @@ let entrypoint
     = \(entrypoint : List Text) -> [ Statement.Entrypoint entrypoint ]
 
 let example0 =
-      entrypoint [ "/bin/bash" ] === [ Statement.Entrypoint [ "/bin/bash" ] ]
+        assert
+      : entrypoint [ "/bin/bash" ] === [ Statement.Entrypoint [ "/bin/bash" ] ]
 
 in  entrypoint
