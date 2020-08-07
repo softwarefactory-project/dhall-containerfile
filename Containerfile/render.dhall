@@ -38,6 +38,7 @@ let render
                         ''
                   , Env = renderEnv
                   , Comment = \(comment : Text) -> "# ${comment}"
+                  , Workdir = \(workdir : Text) -> "WORKDIR ${workdir}"
                   , Run = ./renderRun.dhall
                   , Entrypoint =
                       \(entrypoint : List Text) ->
