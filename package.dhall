@@ -8,7 +8,7 @@ See the README.md for example and usage
 , Statement =
     ./Containerfile/Statement.dhall sha256:f5387775947a40035af87900fee991e17b551179bf0e4b1d18cfd1591ea0d8a6
 , render =
-    ./Containerfile/render.dhall sha256:ef029d6678b7db33a20d37616d04d62cedf8b57388ccfa767dbc26876f402dc4
+    ./Containerfile/render.dhall sha256:b71b2cd60d44b01abaa87cb8a416826ba9f36756a9553782cc83fd71d0e06180
 , optionalStatements =
     ./Containerfile/optionalStatements.dhall sha256:e112cc3399891477b2f6b10ab2b868ad987bdebefcd6534e119f206d50cd8670
 , optionalTexts =

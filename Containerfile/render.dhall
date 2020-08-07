@@ -15,7 +15,7 @@ let render
                 let envText =
                       Prelude.Text.concatSep
                         ''
-
+                         \
                         ${"    "}''
                         ( Prelude.List.map
                             EnvEntry
@@ -74,7 +74,7 @@ let example0 =
              FROM fedora:latest
 
              # A comment
-             ENV HOME="/root"
+             ENV HOME="/root" \
                  TEST="a space"
 
              RUN dnf install -y emacs && dnf clean --all
