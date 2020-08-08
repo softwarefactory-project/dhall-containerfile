@@ -1,6 +1,4 @@
-let Containerfile =
-        env:DHALL_CONTAINERFILE
-      ? https://softwarefactory-project.io/cgit/software-factory/dhall-containerfile/plain/package.dhall
+let Containerfile = ../package.dhall
 
 let FfmpegOption =
       { Type = { x264 : Bool, xcb : Bool }

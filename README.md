@@ -8,9 +8,7 @@ Main [documentation](https://docs.softwarefactory-project.io/dhall-containerfile
 
 ```dhall
 -- ./examples/ffmpeg.dhall
-let Containerfile =
-        env:DHALL_CONTAINERFILE
-      ? https://softwarefactory-project.io/cgit/software-factory/dhall-containerfile/plain/package.dhall
+let Containerfile = ../package.dhall
 
 let FfmpegOption =
       { Type = { x264 : Bool, xcb : Bool }
@@ -126,7 +124,6 @@ in  { Containerfile = Containerfile.render (make FfmpegOption.default)
 
 ```text
 # dhall text <<< '(./examples/ffmpeg.dhall).Containerfile'
-
 FROM fedora:latest
 
 # Install build and runtime reqs
