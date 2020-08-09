@@ -1,5 +1,6 @@
 { Statement = ./Statement.dhall
 , Type = ./Type.dhall
+, add = ./add.dhall
 , concatSep = ./concatSep.dhall
 , emptyLine = ./emptyLine.dhall
 , entrypoint = ./entrypoint.dhall

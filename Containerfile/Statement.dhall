@@ -13,6 +13,7 @@ in    < From : Text
       | Expose : Text
       | Workdir : Text
       | Entrypoint : List Text
+      | Add : List Text
       | Empty
       >
     : Type
