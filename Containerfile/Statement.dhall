@@ -4,20 +4,20 @@ Based on [Dockerfile format](https://docs.docker.com/engine/reference/builder/#f
 let Prelude = ../Prelude.dhall
 
 in    < From : Text
-      | Env : Prelude.Map.Type Text Text
-      | Label : Prelude.Map.Type Text Text
-      | Arg : Prelude.Map.Type Text Text
-      | Comment : Text
       | Run : Text
       | Cmd : List Text
       | Exec : List Text
+      | Label : Prelude.Map.Type Text Text
       | Expose : Text
-      | Workdir : Text
-      | Entrypoint : List Text
+      | Env : Prelude.Map.Type Text Text
       | Add : List Text
       | Copy : List Text
+      | Entrypoint : List Text
       | Volume : List Text
       | User : Text
+      | Workdir : Text
+      | Arg : Prelude.Map.Type Text Text
+      | Comment : Text
       | Empty
       >
     : Type
