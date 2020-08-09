@@ -65,6 +65,7 @@ in    < From : Text
       | Run : Text
       | Cmd : List Text
       | Exec : List Text
+      | Expose : Text
       | Workdir : Text
       | Entrypoint : List Text
       | Empty
