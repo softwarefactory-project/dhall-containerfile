@@ -14,6 +14,7 @@ in    < From : Text
       | Workdir : Text
       | Entrypoint : List Text
       | Add : List Text
+      | Copy : List Text
       | Empty
       >
     : Type

@@ -20,6 +20,7 @@ let renderStatement =
           , Exec = prefixTextList "RUN"
           , Expose = prefixText "EXPOSE"
           , Add = prefixTextList "ADD"
+          , Copy = prefixTextList "COPY"
           , Entrypoint = prefixTextList "ENTRYPOINT"
           , Env = ./Env.dhall
           , Label = ./Label.dhall

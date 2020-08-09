@@ -2,6 +2,7 @@
 , Type = ./Type.dhall
 , add = ./add.dhall
 , concatSep = ./concatSep.dhall
+, copy = ./copy.dhall
 , emptyLine = ./emptyLine.dhall
 , entrypoint = ./entrypoint.dhall
 , env = ./env.dhall
