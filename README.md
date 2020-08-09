@@ -47,9 +47,11 @@ ENTRYPOINT ["emacs"]
 The package implements the [Containerfile reference][ref] with these changes:
 
 * `Exec` is the `RUN` exec form
-* `Cmd` only support the preferred exec form
-* `Empty` denote an empty lines
-* `Add` only support the list form without chown argument
+* `Cmd` only supports the preferred exec form
+* `Empty` denotes an empty lines
+* `Add` only supports the list form without chown argument
+* `Copy` only supports the list form without chown argument
+* `Entrypoint` only supports the prefered exec form
 
 ```dhall
 -- ./Containerfile/Statement.dhall
@@ -69,6 +71,7 @@ in    < From : Text
       | Workdir : Text
       | Entrypoint : List Text
       | Add : List Text
+      | Copy : List Text
       | Empty
       >
     : Type
