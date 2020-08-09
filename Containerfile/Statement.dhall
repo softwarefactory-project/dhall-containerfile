@@ -7,6 +7,7 @@ in    < From : Text
       | Env : Prelude.Map.Type Text Text
       | Comment : Text
       | Run : Text
+      | Exec : List Text
       | Workdir : Text
       | Entrypoint : List Text
       | Empty
