@@ -4,7 +4,65 @@ Manage your Containerfile with [Dhall][dhall-lang].
 
 Main [documentation](https://docs.softwarefactory-project.io/dhall-containerfile/)
 
+## Usage
+
+The package provides convenient function to create the statements:
+
+```dhall
+-- ./examples/demo.dhall
+let Containerfile = ../package.dhall
+
+in    Containerfile.from "fedora"
+    # Containerfile.emptyLine
+    # Containerfile.run
+        "Install emacs"
+        [ "dnf update -y", "dnf install -y emacs-nox", "dnf clean all" ]
+    # Containerfile.entrypoint [ "emacs" ]
+
+```
+
+```
+# dhall text <<< '(./package.dhall).render ./examples/demo.dhall'
+FROM fedora
+
+# Install emacs
+RUN dnf update -y && dnf install -y emacs-nox && dnf clean all
+
+ENTRYPOINT ["emacs"]
+
+```
+
+## Reference
+
+The package implements the [Containerfile reference][ref] with these changes:
+
+* `Exec` is the `RUN` exec form
+* `Empty` denote an empty lines
+
+
+```dhall
+-- ./Containerfile/Statement.dhall
+{-|
+Based on [Dockerfile format](https://docs.docker.com/engine/reference/builder/#format)
+-}
+let Prelude = ../Prelude.dhall
+
+in    < From : Text
+      | Env : Prelude.Map.Type Text Text
+      | Comment : Text
+      | Run : Text
+      | Exec : List Text
+      | Workdir : Text
+      | Entrypoint : List Text
+      | Empty
+      >
+    : Type
+
+```
+
 ## Example
+
+A complete example to build an ffmpeg image with some options:
 
 ```dhall
 -- ./examples/ffmpeg.dhall
@@ -147,3 +205,4 @@ ENTRYPOINT ["/usr/local/bin/ffmpeg"]
 ```
 
 [dhall-lang]: https://dhall-lang.org
+[ref]: https://docs.docker.com/engine/reference/builder/

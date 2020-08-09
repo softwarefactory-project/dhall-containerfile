@@ -4,6 +4,7 @@
 , emptyLine = ./emptyLine.dhall
 , entrypoint = ./entrypoint.dhall
 , env = ./env.dhall
+, exec = ./exec.dhall
 , from = ./from.dhall
 , optionalStatements = ./optionalStatements.dhall
 , optionalTexts = ./optionalTexts.dhall
