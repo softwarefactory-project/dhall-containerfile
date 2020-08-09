@@ -1,6 +1,7 @@
 { Statement = ./Statement.dhall
 , Type = ./Type.dhall
 , add = ./add.dhall
+, arg = ./arg.dhall
 , concatSep = ./concatSep.dhall
 , copy = ./copy.dhall
 , emptyLine = ./emptyLine.dhall

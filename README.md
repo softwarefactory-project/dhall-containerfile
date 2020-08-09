@@ -65,6 +65,7 @@ let Prelude = ../Prelude.dhall
 in    < From : Text
       | Env : Prelude.Map.Type Text Text
       | Label : Prelude.Map.Type Text Text
+      | Arg : Prelude.Map.Type Text Text
       | Comment : Text
       | Run : Text
       | Cmd : List Text
