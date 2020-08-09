@@ -19,6 +19,7 @@ let renderStatement =
           , Cmd = prefixTextList "CMD"
           , Exec = prefixTextList "RUN"
           , Expose = prefixText "EXPOSE"
+          , Add = prefixTextList "ADD"
           , Entrypoint = prefixTextList "ENTRYPOINT"
           , Env = ./Env.dhall
           , Label = ./Label.dhall
