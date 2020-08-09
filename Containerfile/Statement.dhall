@@ -15,6 +15,7 @@ in    < From : Text
       | Entrypoint : List Text
       | Add : List Text
       | Copy : List Text
+      | Volume : List Text
       | Empty
       >
     : Type

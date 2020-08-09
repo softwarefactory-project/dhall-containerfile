@@ -17,6 +17,7 @@ in    Containerfile.from "fedora"
     # Containerfile.run
         "Install emacs"
         [ "dnf update -y", "dnf install -y emacs-nox", "dnf clean all" ]
+    # Containerfile.volume [ "/data" ]
     # Containerfile.label
         ( toMap
             { description = "a text editor"
@@ -35,6 +36,7 @@ FROM fedora
 # Install emacs
 RUN dnf update -y && dnf install -y emacs-nox && dnf clean all
 
+VOLUME ["/data"]
 LABEL description="a text editor"
 LABEL maintainer="tdecacqu@redhat.com"
 
@@ -72,6 +74,7 @@ in    < From : Text
       | Entrypoint : List Text
       | Add : List Text
       | Copy : List Text
+      | Volume : List Text
       | Empty
       >
     : Type

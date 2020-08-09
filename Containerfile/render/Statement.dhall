@@ -21,6 +21,7 @@ let renderStatement =
           , Expose = prefixText "EXPOSE"
           , Add = prefixTextList "ADD"
           , Copy = prefixTextList "COPY"
+          , Volume = prefixTextList "VOLUME"
           , Entrypoint = prefixTextList "ENTRYPOINT"
           , Env = ./Env.dhall
           , Label = ./Label.dhall
