@@ -37,6 +37,7 @@ ENTRYPOINT ["emacs"]
 The package implements the [Containerfile reference][ref] with these changes:
 
 * `Exec` is the `RUN` exec form
+* `Cmd` only support the preferred exec form
 * `Empty` denote an empty lines
 
 
@@ -51,6 +52,7 @@ in    < From : Text
       | Env : Prelude.Map.Type Text Text
       | Comment : Text
       | Run : Text
+      | Cmd : List Text
       | Exec : List Text
       | Workdir : Text
       | Entrypoint : List Text

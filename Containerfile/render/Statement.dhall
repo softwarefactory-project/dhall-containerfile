@@ -16,6 +16,7 @@ let renderStatement =
           , Comment = prefixText "#"
           , Workdir = prefixText "WORKDIR"
           , Run = prefixText "RUN"
+          , Cmd = prefixTextList "CMD"
           , Exec = prefixTextList "RUN"
           , Entrypoint = prefixTextList "ENTRYPOINT"
           , Env = ./Env.dhall
