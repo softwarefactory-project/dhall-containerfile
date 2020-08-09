@@ -16,6 +16,7 @@ let renderStatement =
           , Comment = prefixText "#"
           , Workdir = prefixText "WORKDIR"
           , Run = prefixText "RUN"
+          , User = prefixText "USER"
           , Cmd = prefixTextList "CMD"
           , Exec = prefixTextList "RUN"
           , Expose = prefixText "EXPOSE"

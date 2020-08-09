@@ -75,6 +75,7 @@ in    < From : Text
       | Add : List Text
       | Copy : List Text
       | Volume : List Text
+      | User : Text
       | Empty
       >
     : Type
