@@ -5,4 +5,11 @@ in    Containerfile.from "fedora"
     # Containerfile.run
         "Install emacs"
         [ "dnf update -y", "dnf install -y emacs-nox", "dnf clean all" ]
+    # Containerfile.label
+        ( toMap
+            { description = "a text editor"
+            , maintainer = "tdecacqu@redhat.com"
+            }
+        )
+    # Containerfile.emptyLine
     # Containerfile.entrypoint [ "emacs" ]

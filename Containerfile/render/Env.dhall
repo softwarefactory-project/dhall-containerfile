@@ -4,10 +4,6 @@ let Entry = { mapKey : Text, mapValue : Text }
 
 let Map = List Entry
 
-let renderTextEntry
-    : Entry -> Text
-    = \(entry : Entry) -> "${entry.mapKey}=${Text/show entry.mapValue}"
-
 let renderTextMap
     : Map -> Text
     = \(map : Map) ->
@@ -15,7 +11,7 @@ let renderTextMap
           ''
            \
           ${"    "}''
-          (Prelude.List.map Entry Text renderTextEntry map)
+          (Prelude.List.map Entry Text ./textEntry.dhall map)
 
 let renderEnv
     : Map -> Text

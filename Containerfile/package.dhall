@@ -6,6 +6,7 @@
 , env = ./env.dhall
 , exec = ./exec.dhall
 , from = ./from.dhall
+, label = ./label.dhall
 , optionalStatements = ./optionalStatements.dhall
 , optionalTexts = ./optionalTexts.dhall
 , render = ./render.dhall
