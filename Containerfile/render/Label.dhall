@@ -1,15 +1,4 @@
-let Prelude = ../../Prelude.dhall
-
-let Entry = { mapKey : Text, mapValue : Text }
-
-let Map = List Entry
-
-let renderLabel
-    : Map -> Text
-    = Prelude.Text.concatMapSep
-        "\n"
-        Entry
-        (\(entry : Entry) -> "LABEL " ++ ./textEntry.dhall entry)
+let renderLabel = ./prefixMapText.dhall "LABEL"
 
 let example0 =
         assert

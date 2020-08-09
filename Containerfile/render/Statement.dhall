@@ -26,6 +26,7 @@ let renderStatement =
           , Entrypoint = prefixTextList "ENTRYPOINT"
           , Env = ./Env.dhall
           , Label = ./Label.dhall
+          , Arg = ./prefixMapText.dhall "ARG"
           , Empty = ""
           }
           statement
