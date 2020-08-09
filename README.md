@@ -17,6 +17,13 @@ in    Containerfile.from "fedora"
     # Containerfile.run
         "Install emacs"
         [ "dnf update -y", "dnf install -y emacs-nox", "dnf clean all" ]
+    # Containerfile.label
+        ( toMap
+            { description = "a text editor"
+            , maintainer = "tdecacqu@redhat.com"
+            }
+        )
+    # Containerfile.emptyLine
     # Containerfile.entrypoint [ "emacs" ]
 
 ```
@@ -27,6 +34,9 @@ FROM fedora
 
 # Install emacs
 RUN dnf update -y && dnf install -y emacs-nox && dnf clean all
+
+LABEL description="a text editor"
+LABEL maintainer="tdecacqu@redhat.com"
 
 ENTRYPOINT ["emacs"]
 
@@ -50,10 +60,12 @@ let Prelude = ../Prelude.dhall
 
 in    < From : Text
       | Env : Prelude.Map.Type Text Text
+      | Label : Prelude.Map.Type Text Text
       | Comment : Text
       | Run : Text
       | Cmd : List Text
       | Exec : List Text
+      | Expose : Text
       | Workdir : Text
       | Entrypoint : List Text
       | Empty

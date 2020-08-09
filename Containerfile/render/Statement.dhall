@@ -20,6 +20,7 @@ let renderStatement =
           , Exec = prefixTextList "RUN"
           , Entrypoint = prefixTextList "ENTRYPOINT"
           , Env = ./Env.dhall
+          , Label = ./Label.dhall
           , Empty = ""
           }
           statement
