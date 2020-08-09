@@ -6,7 +6,7 @@ let Prelude = ../Prelude.dhall
 in    < From : Text
       | Env : Prelude.Map.Type Text Text
       | Comment : Text
-      | Run : List Text
+      | Run : Text
       | Workdir : Text
       | Entrypoint : List Text
       | Empty
