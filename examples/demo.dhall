@@ -5,6 +5,7 @@ in    Containerfile.from "fedora"
     # Containerfile.run
         "Install emacs"
         [ "dnf update -y", "dnf install -y emacs-nox", "dnf clean all" ]
+    # Containerfile.volume [ "/data" ]
     # Containerfile.label
         ( toMap
             { description = "a text editor"
