@@ -11,7 +11,7 @@ let optionalStatements
 
 let example0 =
         assert
-      :     optionalStatements True [ Statement.Run [ "make" ] ]
-        ===  [ Statement.Run [ "make" ] ]
+      :     optionalStatements True [ Statement.Run "make" ]
+        ===  [ Statement.Run "make" ]
 
 in  optionalStatements
