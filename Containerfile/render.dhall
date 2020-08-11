@@ -29,8 +29,8 @@ let example0 =
              FROM fedora:latest
 
              # A comment
-             ENV HOME="/root" \
-                 TEST="a space"
+             ENV HOME /root
+             ENV TEST a space
 
              RUN dnf install -y emacs && dnf clean --all
              ''
