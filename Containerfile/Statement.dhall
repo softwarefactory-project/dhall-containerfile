@@ -17,6 +17,7 @@ in    < From : Text
       | User : Text
       | Workdir : Text
       | Arg : Prelude.Map.Type Text Text
+      | Shell : List Text
       | Comment : Text
       | Empty
       >

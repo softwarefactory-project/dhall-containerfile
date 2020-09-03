@@ -27,6 +27,7 @@ let renderStatement =
           , Env = ./Env.dhall
           , Label = ./Label.dhall
           , Arg = ./prefixMapText.dhall "ARG"
+          , Shell = prefixTextList "SHELL"
           , Empty = ""
           }
           statement
