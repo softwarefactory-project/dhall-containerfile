@@ -1,28 +1,36 @@
 let Prelude = ../../Prelude.dhall
 
-let Entry = { mapKey : Text, mapValue : Text }
-
-let Map = List Entry
-
-let renderTextMap
-    : Map -> Text
-    = \(map : Map) ->
-        Prelude.Text.concatSep
-          ''
-           \
-          ${"    "}''
-          (Prelude.List.map Entry Text ./textEntry.dhall map)
+let renderEnvEntry
+    : Prelude.Map.Entry Text Text -> Text
+    = \(entry : Prelude.Map.Entry Text Text) ->
+        "ENV ${entry.mapKey} ${entry.mapValue}"
 
 let renderEnv
-    : Map -> Text
-    = \(map : Map) -> "ENV " ++ renderTextMap map
+    : Prelude.Map.Type Text Text -> Text
+    = \(map : Prelude.Map.Type Text Text) ->
+        Prelude.Text.concatSep
+          "\n"
+          ( Prelude.List.map
+              (Prelude.Map.Entry Text Text)
+              Text
+              renderEnvEntry
+              map
+          )
 
 let example0 =
         assert
-      :     renderEnv (toMap { HOME = "/root", TEST = "a space" }) ++ "\n"
+      :         renderEnv
+                  ( toMap
+                      { HOME = "/root"
+                      , TEST = "a space"
+                      , PATH = "/usr/bin:\$PATH"
+                      }
+                  )
+            ++  "\n"
         ===  ''
-             ENV HOME="/root" \
-                 TEST="a space"
+             ENV HOME /root
+             ENV PATH /usr/bin:$PATH
+             ENV TEST a space
              ''
 
 in  renderEnv
