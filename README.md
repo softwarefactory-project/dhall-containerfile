@@ -71,6 +71,7 @@ in    < From : Text
       | Env : Prelude.Map.Type Text Text
       | Add : List Text
       | Copy : List Text
+      | CopyFrom : { from : Text, files : List Text }
       | Entrypoint : List Text
       | Volume : List Text
       | User : Text

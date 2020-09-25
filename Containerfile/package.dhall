@@ -4,6 +4,7 @@
 , arg = ./arg.dhall
 , concatSep = ./concatSep.dhall
 , copy = ./copy.dhall
+, copyFrom = ./copyFrom.dhall
 , emptyLine = ./emptyLine.dhall
 , entrypoint = ./entrypoint.dhall
 , env = ./env.dhall

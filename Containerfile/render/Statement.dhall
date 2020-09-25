@@ -22,6 +22,9 @@ let renderStatement =
           , Expose = prefixText "EXPOSE"
           , Add = prefixTextList "ADD"
           , Copy = prefixTextList "COPY"
+          , CopyFrom =
+              \(copy : { from : Text, files : List Text }) ->
+                prefixTextList "COPY --from=${copy.from}" copy.files
           , Volume = prefixTextList "VOLUME"
           , Entrypoint = prefixTextList "ENTRYPOINT"
           , Env = ./Env.dhall
