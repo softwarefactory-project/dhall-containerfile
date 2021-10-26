@@ -18,6 +18,7 @@
 , optionalTexts = ./optionalTexts.dhall
 , render = ./render.dhall
 , run = ./run.dhall
+, user = ./user.dhall
 , volume = ./volume.dhall
 , workdir = ./workdir.dhall
 }
