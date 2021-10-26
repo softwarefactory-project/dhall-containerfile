@@ -233,11 +233,11 @@ ENTRYPOINT ["/usr/local/bin/ffmpeg"]
 
 Frozen package are available in the tag commit.
 
-### 0.3.0
+### 0.4.0
 
 - Add `user` helper
 
-### 0.2.0
+### 0.3.0
 
 - Initial release
 
