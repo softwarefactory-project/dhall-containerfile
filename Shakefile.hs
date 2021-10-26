@@ -13,4 +13,5 @@ main = shakeMain $ do
   "package.dhall" %> dhallTopLevelPackageAction "./Containerfile/package.dhall"
   "//package.dhall" %> dhallPackageAction
   dhallDocsRules "dhall-containerfile"
+  dhallReleaseRules "./Containerfile/package.dhall"
   cleanRules

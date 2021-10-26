@@ -229,5 +229,17 @@ ENTRYPOINT ["/usr/local/bin/ffmpeg"]
 
 ```
 
+## Changes
+
+Frozen package are available in the tag commit.
+
+### 0.3.0
+
+- Add `user` helper
+
+### 0.2.0
+
+- Initial release
+
 [dhall-lang]: https://dhall-lang.org
 [ref]: https://docs.docker.com/engine/reference/builder/
